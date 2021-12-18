@@ -1,6 +1,14 @@
 # Memory Management 
 
-In this assignment, I implemented functions that behave like malloc, calloc, realloc, and free using mmap and munmap system calls. Use the following commands to test it:
+In this assignment, I implemented functions that behave like malloc, calloc, realloc, and free using mmap and munmap system calls. To compile the files, use the following: 
+
+```bash
+gcc -fPIC -Wall -g -O0 -c memory.c 
+gcc -fPIC -Wall -g -O0 -c implementation.c
+gcc -fPIC -shared -o memory.so memory.o implementation.o -lpthread
+```
+
+Use the following commands to test it:
 
 ```bash
 export LD_LIBRARY_PATH=`pwd`:"$LD_LIBRARY_PATH"
